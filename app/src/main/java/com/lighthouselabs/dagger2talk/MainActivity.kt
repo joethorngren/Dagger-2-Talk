@@ -1,9 +1,11 @@
 package com.lighthouselabs.dagger2talk
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.widget.Button
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
 import dagger.android.AndroidInjection
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val constraintLayout = findViewById<ConstraintLayout>(R.id.main_activity_container)
+        val goToSecondActivityButton = findViewById<Button>(R.id.go_to_second_activity_button)
+        goToSecondActivityButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+        }
 
         Toast.makeText(this, fooString, Toast.LENGTH_SHORT).show()
 
