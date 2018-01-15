@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject lateinit var fooString: String
     @Inject lateinit var fooBarPair: Pair<String, String>
+    @Inject lateinit var intDoublePair: Pair<Int, Double>
     @Inject lateinit var dialogBuilder: MaterialDialog.Builder
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity() {
 
         Snackbar.make(constraintLayout, fooBarPair.first + fooBarPair.second, Snackbar.LENGTH_LONG).show()
 
-        dialogBuilder.positiveText("Hi there!").build().show()
+        dialogBuilder.title("${intDoublePair.first} ${intDoublePair.second}")
+                .positiveText("Hi there!")
+                .build()
+                .show()
     }
 }

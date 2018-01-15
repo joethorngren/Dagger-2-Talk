@@ -17,4 +17,29 @@ class MainActivityModule {
     fun provideFooBarPair(): Pair<String, String> {
         return Pair("Foo", "Bar")
     }
+
+    @Provides
+    fun provideInt(): Int {
+        return 5
+    }
+
+    @Provides
+    fun provideDouble(): Double {
+        return 1.3
+    }
+
+    @Provides
+    fun provideChar(): Char {
+        return 'c'
+    }
+
+    @Provides
+    fun provideIntDoublePair(int: Int, double: Double): Pair<Int, Double> {
+        return Pair(int, double)
+    }
+
+    @Provides
+    fun provideIntCharPair(int: Int, char: Char): Pair<Int, Char> {
+        return Pair(int, char)
+    }
 }
